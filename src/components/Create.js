@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import axios from 'axios';
 
 const Create = () => {
+
+    let history = useHistory();
 
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -13,6 +16,8 @@ const Create = () => {
             name,
             lastName,
             checkbox
+        }).then(() => {
+            history.push('/read');
         });
     };
 
