@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 //import { useHistory } from 'react-router';
-import { List, Modal, Comment, Grid, Button, Header, Form } from 'semantic-ui-react';
+import { List, Modal, Comment, Grid, Button, Header, Form, Segment, Image, Dimmer, Loader } from 'semantic-ui-react';
 import axios from 'axios';
 
 import '../../styles.css';
@@ -23,6 +23,7 @@ const PostsList = () => {
         axios.get(url)
             .then(response => {
                 setPosts([...response.data]);
+                setLoading(!loading);
             });
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -54,8 +55,26 @@ const PostsList = () => {
             <List selection verticalAlign='middle' >
                 <Grid columns={3} divided container stackable>
                     <h1>Posts list for {userNamePassed}</h1>
-                    {loading ?
-                        <h1>LOADNG</h1>
+                    {loading
+                        ?
+                        <Segment>
+                            <Dimmer active inverted>
+                                <Loader size='massive' active />
+                            </Dimmer>
+                            <Grid container verticalAlign='middle' doubling columns={3} centered>
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+                        </Segment>
                         :
                         <Grid.Row>
                             <Grid.Column mobile={16} tablet={8} computer={4} key={1}>
