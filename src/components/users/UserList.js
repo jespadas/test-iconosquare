@@ -21,6 +21,7 @@ const UserList = () => {
 
     useEffect(() => {
         getUsers();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
@@ -32,7 +33,8 @@ const UserList = () => {
     };
 
     return (
-        <div className="list-container">
+        <div className="container">
+
             {
                 loading
                     ?

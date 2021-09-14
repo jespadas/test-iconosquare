@@ -1,27 +1,11 @@
-body {
-  background-color: #2ca4ff;
-  margin-top: 20px;
-}
-
 .main {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  background-color: #2ca4ff;
-  color: whitesmoke;
   flex-direction: column;
 }
 
-.main-header span {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  color: whitesmoke;
-  font-size: 30px;
-}
-
-h1 {
-  color: whitesmoke;
+.container {
+  margin-top: 30px !important;
 }
 
 .create-button {
@@ -32,8 +16,4 @@ h1 {
   font-size: 30px !important;
   height: 100%;
   width: 100%;
-}
-
-.posts-container {
-  margin: 20px 10px 10px 10px;
 }
