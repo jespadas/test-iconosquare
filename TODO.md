@@ -23,7 +23,8 @@ Sinon vous devrez nous faire parvenir un zip de votre projet
 
 ## Todo list
 
+- [ ] Refactoring (separer les componsants)
+- [ ] Tests
+- [x] Loading spinner
 - [ ] Ajouter des commentaires dans les nouveaux posts.
-- [x] Loading spinne
 - [ ] POST method pour les nouveaux posts
-      Plus d'ideés bientôt
