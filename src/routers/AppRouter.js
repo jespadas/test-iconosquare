@@ -6,27 +6,21 @@ import AppHeader from '../components/ui/AppHeader';
 import { CreatePost } from '../components/CreateScreen'
 import '../styles.css';
 
-//import { AppContext } from '../context/AppContext';
-
 export const AppRouter = () => {
 
     return (
-        <>
-
-            <Router>
+        <Router>
+            <div className="main">
                 <Link to="/" >
                     <AppHeader />
                 </Link>
-
-                <div>
-                    <Switch>
-                        <Route exact path="/" component={UserList} />
-                        <Route exact path="/user/:userId/posts" component={PostsList} />
-                        <Route exact path="/user/:userId/create-post" component={CreatePost} />
-                        <Redirect to='/' />
-                    </Switch>
-                </div>
-            </Router>
-        </>
+                <Switch>
+                    <Route exact path="/" component={UserList} />
+                    <Route exact path="/user/:userId/posts" component={PostsList} />
+                    <Route exact path="/user/:userId/create-post" component={CreatePost} />
+                    <Redirect to='/' />
+                </Switch>
+            </div>
+        </Router>
     );
 };

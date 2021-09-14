@@ -1,12 +1,11 @@
-import './styles.css';
-import { MainBody } from './components/ui/MainBody';
-
 import { AppContext } from './context/AppContext';
+import { AppRouter } from './routers/AppRouter';
+import './styles.css';
 
 function App() {
   return (
     <AppContext.Provider value>
-      <MainBody />
+      <AppRouter />
     </AppContext.Provider>
   );
 }
